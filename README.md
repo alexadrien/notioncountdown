@@ -1,6 +1,6 @@
-# APP_TITLE_TO_REPLACE
+# Notion Countdown
 
-APP_DESCRIPTION_TO_REPLACE
+A widget to display a countdownn
 
 ## Recoil
 

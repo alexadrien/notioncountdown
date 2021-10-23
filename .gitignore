@@ -25,3 +25,4 @@ yarn-error.log*
 template/
 .netlify/
 .env
+.idea/

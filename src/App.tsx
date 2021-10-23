@@ -1,10 +1,37 @@
 import React from 'react';
-import {Box} from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
+import { useLocation } from "react-router-dom";
+import dayjs from "dayjs"
+import RelativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(RelativeTime);
+
+function useQuery(): URLSearchParams {
+  return new URLSearchParams(useLocation().search);
+}
+
+const useStyle = makeStyles({
+  box: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    padding: "10px 0",
+    boxSizing: "content-box",
+    overflow: "hidden",
+  },
+  typo: {
+  },
+});
 
 function App(): React.ReactElement {
+  const queryParams = useQuery();
+  const dateString = queryParams.get("date");
+  const classes = useStyle();
+
   return (
-    <Box>
-      APP_TITLE_TO_REPLACE
+    <Box className={classes.box}>
+      <Typography variant={"h1"} className={classes.typo}>
+        {dayjs(dateString).diff(dayjs(), "days")} days left
+      </Typography>
     </Box>
   );
 }

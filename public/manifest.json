@@ -1,6 +1,6 @@
 {
-  "short_name": "APP_TITLE_TO_REPLACE",
-  "name": "APP_DESCRIPTION_TO_REPLACE",
+  "short_name": "Notion Countdown",
+  "name": "A widget to display a countdownn",
   "icons": [
     {
       "src": "favicon.ico",
