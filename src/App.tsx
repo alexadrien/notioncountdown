@@ -12,9 +12,10 @@ function useQuery(): URLSearchParams {
 const useStyle = makeStyles({
   box: {
     width: "100%",
+    height: "100%",
     display: "flex",
     justifyContent: "center",
-    padding: "10px 0",
+    alignItems: "center",
     boxSizing: "content-box",
     overflow: "hidden",
   },
