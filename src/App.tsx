@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
-import dayjs from "dayjs"
+import dayjs from "dayjs";
 import RelativeTime from "dayjs/plugin/relativeTime";
+
 dayjs.extend(RelativeTime);
 
 function useQuery(): URLSearchParams {
@@ -19,18 +20,24 @@ const useStyle = makeStyles({
     boxSizing: "content-box",
     overflow: "hidden",
   },
-  typo: {
-  },
+  typo: {},
 });
 
 function App(): React.ReactElement {
   const queryParams = useQuery();
   const dateString = queryParams.get("date");
+  const sizeString = queryParams.get("size") || "50";
   const classes = useStyle();
 
   return (
     <Box className={classes.box}>
-      <Typography variant={"h1"} className={classes.typo}>
+      <Typography
+        variant={"h1"}
+        className={classes.typo}
+        style={{
+          fontSize: `${sizeString}vh`,
+        }}
+      >
         {dayjs(dateString).diff(dayjs(), "days")} days left
       </Typography>
     </Box>
