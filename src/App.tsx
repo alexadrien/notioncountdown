@@ -27,10 +27,18 @@ function App(): React.ReactElement {
   const queryParams = useQuery();
   const dateString = queryParams.get("date");
   const sizeString = queryParams.get("size") || "50";
+  const justifyString = queryParams.get("justify") || "center";
+  const alignString = queryParams.get("align") || "center";
   const classes = useStyle();
 
   return (
-    <Box className={classes.box}>
+    <Box
+      className={classes.box}
+      style={{
+        justifyContent: justifyString,
+        alignItems: alignString,
+      }}
+    >
       <Typography
         variant={"h1"}
         className={classes.typo}
